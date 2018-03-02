@@ -1,0 +1,20 @@
+{% extends "thetalentscout/base.html" %}
+{% block blocco_sezione %}
+    Inserimento Categoria
+{% endblock blocco_sezione %}
+
+{% block blocco_main %}
+
+    <form method="POST" class="post-form">{% csrf_token %}
+        <dl>
+            <section id="lista">
+                <dt><a class="descrizione">{{ form.as_p }}</a></dt>
+            </section>
+        </dl>
+        <div class="nomecognome">
+            <input id="search_submit" class="button1" type="submit" value="Salvataggio"/>
+        </div>
+
+    </form>
+
+{% endblock blocco_main %}

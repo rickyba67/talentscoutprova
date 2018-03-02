@@ -1,0 +1,777 @@
+* {
+     font-family: "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+     font-size: 14px;
+}
+
+.nome2{
+    /*background-color: red;*/
+    width: 100%;
+    text-align: center;
+    word-wrap: break-word; /*break-word -> spezza la parola in due se non entra nel box */
+    margin-top: -10px;
+}
+
+.selettori {
+    border: 1px solid #ccc;
+    padding: 1px;
+    border-radius: 4px;
+    opacity: 1;
+    /*margin-left: 30px;*/
+    width: 200px;
+    /*width: 40%;*/
+    margin-top: 5px;
+}
+
+#id_partita{
+    width: 350px;
+}
+
+.datipartita {
+    /*order: -1;*/
+    padding-left: 15px;
+    width: 65%;
+    border: 1px solid silver;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+
+.datipartita_sx {
+    /*order: -1;*/
+    padding-left: 15px;
+    width: 65%;
+    border: 1px solid silver;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 23%;
+}
+
+.datipartita_dx {
+    /*order: -1;*/
+    padding-left: 15px;
+    width: 65%;
+    border: 1px solid silver;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-right: 23%;
+}
+
+.datipartita1 {
+    /*order: -1;*/
+    padding-left: 15px;
+    border: 1px solid silver;
+    padding-top: 5px;
+    text-align: center;
+    padding-bottom: 10px;
+    margin-top: -8px;
+}
+
+label2 {
+    color: white;
+    float:left;
+    /*width:110px;*/
+    width: 30%;
+    text-align:right;
+    padding-top:5px;
+    /*margin-right: -84px;*/
+    margin-top: 5px;
+}
+
+label3 {
+    color: white;
+    float:left;
+    /*width:160px;*/
+    width: 40%;
+    text-align:right;
+    padding-top:5px;
+    margin-right:5px;
+    /*margin-top: 5px;*/
+}
+
+.idcheck {
+    margin-top: 9px;
+    margin-left: -133px;
+}
+
+.aspettogenerale{
+    color: white;
+    padding-top: 10px;
+    display: -webkit-flex;
+    display: flex;
+    text-align: -webkit-center;
+}
+
+.altroaspetto{
+    /*background-color: red;*/
+    width: 50%;
+    /*text-align: center;*/
+    word-wrap: break-word; /*break-word -> spezza la parola in due se non entra nel box */
+    /*background-color: red;*/
+
+}
+
+.aspetto {
+    width: 50%;
+    /*text-align: center;*/
+    /*background-color: aqua;*/
+}
+
+.assomogliaA{
+    width: 172px;
+    margin-left: -1px;
+}
+
+label4{
+    font-weight: bold;
+    color: silver;
+    text-decoration-line: underline;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+/*SCREEN*/
+/*CELLULARE*/
+@media screen and (max-width:256px) {
+
+    label2{
+        width: 38%;
+        font-size: 10px;
+        padding-top: 2px;
+        float: none;
+    }
+
+    label3{
+        font-size: 9px;
+        width: 71%;
+        margin-right: 82px;
+        padding-top: 8px;
+    }
+
+    label4{
+        font-size: 10px;
+        margin-left: 0px;
+    }
+
+    #id_partita{
+        font-size: 8px;
+        width: 90%;
+    }
+
+    #id_categoria {
+        font-size: 9px;
+        width: 134px;
+    }
+
+    .aspettogenerale .selettori{
+        font-size: 10px;
+        width: 109px;    }
+
+    .datipartita_sx {
+        width: 100%;
+        margin-left: -30%;
+        padding-right: 5px;
+        padding-left: 5px;
+        border: none;
+    }
+
+    .datipartita_dx {
+        width: 134%;
+        /*margin-right: 10%;*/
+        margin-left: -5px;
+        border: none;
+        padding-left: 0%;
+    }
+
+    .aspettogenerale{
+        padding-top: 0px;
+        display: block;
+
+    }
+
+    .altroaspetto{
+        width: 45%;
+        /*-webkit-order: -1;*/
+        /*order: -1;*/
+    }
+
+    .idcheck {
+        margin-left: -80px;
+    }
+
+    .aspetto{
+        margin-left: 10px;
+        text-align: center;
+        /*-webkit-order: -1;*/
+        /*order: -1;*/
+    }
+    .selettori{
+        margin-top: 0px;
+    }
+
+    .datipartita1{
+        padding-left: 0px;
+        border: none;
+        padding-bottom: 0px;
+        margin-top: -4px;
+        margin-left: 0px;
+    }
+}
+@media screen and (min-width:298px) and (max-width:480px) {
+
+    .datipartita1{
+        margin-top: -4px;
+    }
+
+    label2{
+        width: 38%;
+        font-size: 10px;
+        padding-top: 2px;
+        float: none;
+    }
+
+    label3{
+        font-size: 10px;
+        width: 72%;
+        margin-right: 77px;
+        padding-top: 8px;
+    }
+
+    label4{
+        font-size: 10px;
+        margin-left: 0px;
+    }
+
+    #id_partita{
+        font-size: 9px;
+        width: 210px;
+    }
+
+    #id_categoria {
+        font-size: 9px;
+        width: 134px;
+    }
+
+    .aspettogenerale .selettori{
+        font-size: 10px;
+        width: 130px;    }
+
+    .datipartita_sx {
+        width: 87%;
+        margin-left: -4%;
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+    .datipartita_dx {
+        width: 90%;
+        /*margin-right: 10%;*/
+        margin-left: -5px
+    }
+
+    .aspettogenerale{
+        padding-top: 0px;
+    }
+
+    .altroaspetto{
+        width: 45%;
+    }
+
+    .idcheck {
+        margin-left: -80px;
+    }
+
+    .aspetto{
+        margin-left: 10px;
+        text-align: center;
+    }
+    .selettori{
+        margin-top: 0px;
+    }
+}
+
+@media screen and (min-width:257px) and (max-width:297px) {
+    .datipartita1{
+        margin-top: -4px;
+    }
+
+    label2{
+        width: 38%;
+        font-size: 10px;
+        padding-top: 2px;
+        float: none;
+    }
+
+    label3{
+        font-size: 9px;
+        width: 71%;
+        margin-right: 82px;
+        padding-top: 8px;
+    }
+
+    label4{
+        font-size: 10px;
+        margin-left: 0px;
+    }
+
+    #id_partita{
+        font-size: 9px;
+        width: 210px;
+    }
+
+    #id_categoria {
+        font-size: 9px;
+        width: 134px;
+    }
+
+    .aspettogenerale .selettori{
+        font-size: 10px;
+        width: 109px;    }
+
+    .datipartita_sx {
+        width: 87%;
+        margin-left: -4%;
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+    .datipartita_dx {
+        width: 90%;
+        /*margin-right: 10%;*/
+        margin-left: -5px
+    }
+
+    .aspettogenerale{
+        padding-top: 0px;
+    }
+
+    .altroaspetto{
+        width: 45%;
+    }
+
+    .idcheck {
+        margin-left: -80px;
+    }
+
+    .aspetto{
+        margin-left: 10px;
+        text-align: center;
+    }
+    .selettori{
+        margin-top: 0px;
+    }
+}
+@media screen and (min-width:298px) and (max-width:480px) {
+
+    .datipartita1{
+        margin-top: -4px;
+    }
+
+    label2{
+        width: 38%;
+        font-size: 10px;
+        padding-top: 2px;
+        float: none;
+    }
+
+    label3{
+        font-size: 10px;
+        width: 72%;
+        margin-right: 77px;
+        padding-top: 8px;
+    }
+
+    label4{
+        font-size: 10px;
+        margin-left: 0px;
+    }
+
+    #id_partita{
+        font-size: 9px;
+        width: 210px;
+    }
+
+    #id_categoria {
+        font-size: 9px;
+        width: 134px;
+    }
+
+    .aspettogenerale .selettori{
+        font-size: 10px;
+        width: 130px;    }
+
+    .datipartita_sx {
+        width: 87%;
+        margin-left: -4%;
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+    .datipartita_dx {
+        width: 90%;
+        /*margin-right: 10%;*/
+        margin-left: -5px
+    }
+
+    .aspettogenerale{
+        padding-top: 0px;
+    }
+
+    .altroaspetto{
+        width: 45%;
+    }
+
+    .idcheck {
+        margin-left: -80px;
+    }
+
+    .aspetto{
+        margin-left: 10px;
+        text-align: center;
+    }
+    .selettori{
+        margin-top: 0px;
+    }
+}
+
+/*TABLET*/
+@media screen and (min-width:481px) and (max-width:496px) {
+    label2{
+        width: 38%;
+        font-size: 10px;
+        padding-top: 2px;
+    }
+
+    label3{
+        font-size: 10px;
+        width: 50%;
+        margin-right: 15px;
+        padding-top: 8px;
+    }
+
+    label4{
+        font-size: 12px;
+    }
+
+    #id_partita{
+        font-size: 10px;
+        width: 250px;
+    }
+
+    #id_categoria {
+        font-size: 10px;
+        width: 150px;
+    }
+
+    .aspettogenerale .selettori{
+        font-size: 10px;
+        width: 130px;    }
+
+    .datipartita_sx {
+        width: 90%;
+        margin-left: 1%;
+    }
+
+    .datipartita_dx {
+        width: 90%;
+        /*margin-right: 10%;*/
+        margin-left: 10px
+    }
+
+    .aspettogenerale{
+        padding-top: 0px;
+    }
+
+    .altroaspetto{
+        width: 45%;
+    }
+
+    .idcheck {
+        margin-left: -80px;
+    }
+
+    .aspetto{
+        margin-left: 10px;
+    }
+}
+@media screen and (min-width:497px) and (max-width:545px) {
+    label2{
+        width: 35%;
+        font-size: 10px;
+    }
+
+    label3{
+        font-size: 10px;
+        width: 50%;
+    }
+
+    label4{
+        font-size: 12px;
+    }
+
+    #id_partita{
+        font-size: 10px;
+        width: 250px;
+    }
+
+    #id_categoria {
+        font-size: 10px;
+        width: 150px;
+    }
+
+    .aspettogenerale .selettori{
+        font-size: 10px;
+        width: 130px;    }
+
+    .datipartita_sx {
+        width: 90%;
+        margin-left: 1%;
+    }
+
+    .datipartita_dx {
+        width: 90%;
+        /*margin-right: 10%;*/
+        margin-left: 10px
+    }
+
+    .aspettogenerale{
+        padding-top: 0px;
+    }
+
+    .altroaspetto{
+        width: 47%;
+    }
+
+    .idcheck {
+        margin-left: -80px;
+    }
+}
+
+@media screen and (min-width:546px) and (max-width:668px) {
+
+    label2{
+        width: 35%;
+        font-size: 10px;
+    }
+
+    label3{
+        font-size: 10px;
+        width: 34%;
+    }
+
+    label4{
+        font-size: 12px;
+    }
+
+    #id_partita{
+        font-size: 10px;
+        width: 250px;
+    }
+
+    #id_categoria {
+        font-size: 10px;
+        width: 150px;
+    }
+
+    .aspettogenerale .selettori{
+        font-size: 10px;
+        width: 130px;    }
+
+    .datipartita_sx {
+        width: 90%;
+        margin-left: 1%;
+    }
+
+    .datipartita_dx {
+        width: 90%;
+        /*margin-right: 10%;*/
+        margin-left: 10px
+    }
+
+    .aspettogenerale{
+        padding-top: 0px;
+    }
+
+    .altroaspetto{
+        width: 49%;
+    }
+
+    .idcheck {
+        margin-left: -80px;
+    }
+
+}
+
+@media screen and (min-width:669px) and (max-width:802px) {
+    label2{
+        width: 26%;
+        font-size: 10px;
+    }
+
+    label3{
+        font-size: 10px;
+    }
+
+    label4{
+        font-size: 12px;
+    }
+
+    #id_partita{
+        font-size: 10px;
+        width: 250px;
+    }
+
+    #id_categoria {
+        font-size: 10px;
+        width: 150px;
+    }
+
+    .aspettogenerale .selettori{
+        font-size: 10px;
+    }
+
+    .datipartita_sx {
+        width: 90%;
+        margin-left: 1%;
+    }
+
+    .datipartita_dx {
+        width: 90%;
+        /*margin-right: 10%;*/
+        margin-left: 10px
+    }
+
+    .aspettogenerale{
+        padding-top: 0px;
+    }
+
+    .idcheck {
+        margin-left: -80px;
+    }
+
+}
+
+/*COMPUTER*/
+@media screen and (min-width:803px) and (max-width:936px)
+{
+    .nome2 span{
+        font-size: 30px;
+    }
+
+    label2{
+        width: 26%;
+        font-size: 12px;
+    }
+
+    label3{
+        font-size: 12px;
+    }
+
+    label4{
+        font-size: 14px;
+    }
+
+    .aspetto .selettori {
+        width: 175px;
+    }
+
+    .datipartita_sx {
+        width: 90%;
+        margin-left: 1%;
+    }
+
+    .datipartita_dx {
+        width: 90%;
+        /*margin-right: 10%;*/
+        margin-left: 10px
+    }
+
+    .aspettogenerale{
+        padding-top: 0px;
+    }
+
+}
+
+@media screen and (min-width:937px) and (max-width:1140px)
+{
+    .nome2 span{
+        font-size: 45px;
+    }
+
+    label2{
+        width: 26%;
+        font-size: 14px;
+    }
+
+    label3{
+        font-size: 14px;
+    }
+
+    label4{
+        font-size: 14px;
+    }
+
+    .aspetto .selettori {
+        width: 175px;
+    }
+
+    .datipartita_sx {
+        width: 90%;
+        margin-left: 1%;
+    }
+
+    .datipartita_dx {
+        width: 90%;
+        /*margin-right: 10%;*/
+        margin-left: 10px
+    }
+
+    .aspettogenerale{
+        padding-top: 10px;
+    }
+
+    /*#id_partita{*/
+        /*font-size: 10px;*/
+        /*width: 250px;*/
+    /*}*/
+
+    /*#id_categoria {*/
+        /*font-size: 10px;*/
+        /*width: 150px;*/
+    /*}*/
+}
+
+@media screen and (min-width:1141px)
+{
+    label2{
+        width: 30%;
+        font-size: 14px;
+    }
+
+    label3{
+        font-size: 14px;
+    }
+
+    label4{
+        font-size: 14px;
+    }
+
+    .aspetto .selettori {
+        width: 175px;
+    }
+
+    .datipartita_sx {
+        width: 65%;
+        margin-left: 23%;
+    }
+
+    .datipartita_dx {
+        width: 65%;
+        margin-right: 23%;
+    }
+
+    .aspettogenerale{
+        padding-top: 10px;
+    }
+
+}
+

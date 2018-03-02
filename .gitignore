@@ -1,0 +1,6 @@
+*.pyc
+__pycache__
+Calciomyenv
+db.talentscout
+/static
+.DS_Store

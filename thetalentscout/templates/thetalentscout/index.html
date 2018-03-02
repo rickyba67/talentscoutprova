@@ -1,0 +1,58 @@
+{% extends "thetalentscout/base.html" %}
+
+{% load static from staticfiles %}
+    <script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/jquery.chained.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/jquery.chained.remote.min.js" %}"></script>
+
+{% block blocco_sezione %}
+    Home Page
+{% endblock blocco_sezione %}
+{% block blocco_main %}
+    <form type="get" action="" style="margin: 0">
+        <fieldset id="legenda">
+            <legend id="pulsanti">Filtri:</legend>
+
+            <div id="blocco">
+                <input id="radio" type="radio" name="sele1" value=1 checked> Tutti
+                <input id="radio" type="radio" name="sele1" value=2> Talent
+                <input id="radio" type="radio" name="sele1" value=3> Altri
+
+                <input id="search_box" type="text" name="search_box"  placeholder="cognome...">
+
+                <input id="search_box1" type="text" name="id_anno"  placeholder="anno...">
+
+{#                <button id="search_submit" type="submit" class="button" >Ricerca</button>#}
+                <input id="search_submit" class="button" type="submit" value="Ricerca"/></a>
+
+{#                <select name="categoria" required id={{ calciatore.datanascita }}</select><br><br>#}
+
+{#                <select name="id_anno" id="id_anno" >#}
+{#                    <option value="">Seleziona un anno</option>#}
+{#                    <option>1998</option>#}
+{#                    <option>1999</option>#}
+{#                    <option>2000</option>#}
+{#                    <option>2001</option>#}
+{#                </select>#}
+            </div>
+        </fieldset>
+    </form>
+
+    <div class="newspaper">
+        <dl>
+            <section id="lista">
+                {% if lista_giocatori %}
+                    {% for calciatore in lista_giocatori %}
+                        <dt><a id="listagiocatori" href="{% url 'thetalentscout:gare_del_giocatore' calciatore.id %}">
+                                                                                    {{ calciatore.cognome }}
+                                                                                    {{ calciatore.nome }}</a>
+                        </dt>
+                    {% endfor %}
+                {% else %}
+                    <p>Nessun giocatore nel sistema.</p>
+                {% endif %}
+            </section>
+        </dl>
+    </div>
+{% endblock blocco_main %}
+

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="it">
+
+{% load static from staticfiles %}
+
+<head>
+    <script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/jquery.chained.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/jquery.chained.remote.min.js" %}"></script>
+
+    <meta charset="utf-8" />
+
+	<title>The Talent Scout</title>
+	<meta name="base" content="Base di progetto" />
+	<meta name="author" content="Riccardo" />
+
+    <link rel="stylesheet" href="{% static 'css/comune_a_tutti.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style_index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/garedelgiocatore.css' %}">
+    <link rel="stylesheet" href="{% static 'css/newgiocatore.css' %}">
+    <link rel="stylesheet" href="{% static 'css/inserisci_gara_giocatore.css' %}">
+    <link rel="stylesheet" href="{% static 'css/inserisci_gara.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dettaglio_gara_giocatore.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tabelle.css' %}">
+{#    <link rel="stylesheet" href="{% static 'css/lista_partite.css' %}">#}
+
+</head>
+
+<body>
+    <header>
+        <span>
+            {% block blocco_sezione %}
+            {% endblock blocco_sezione %}
+        </span>
+{#        <h1>The Talent Scout</h1>#}
+{#        <h2>I migliori professionisti al servizio del calciatore</h2>#}
+        <div id="box2">
+        </div>
+        <h3>
+            <nav>
+                <ul1>
+                    <li1 ><a class="a_logout" href="{% url 'thetalentscout:index' %}">Home</a></li1>
+                    <li1 ><a class="a_logout" href="{% url 'logout' %}?next=/thetalentscout/login">Logout</a></li1>
+                </ul1>
+            </nav>
+        </h3>
+        <div id="box4">
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Partite</a>
+                    <div class="dropdown-content">
+{#                        <a href="{% url 'thetalentscout:lista_gare' %}">Lista</a>#}
+                        <a href="{% url 'thetalentscout:lista_partite' %}">Lista</a>
+                            <a href="javascript:void(0)" class="dropbtn" id="nuovapartita">Nuova</a>
+                                <div class="dropdown-content2">
+                                    <a href="{% url 'thetalentscout:new_gara' 'U'%}">Ufficiale(18)</a>
+                                    <a href="{% url 'thetalentscout:new_gara_amichevole' 'A'%}">Amichevole(20)</a>
+                                    <a href="{% url 'thetalentscout:new_gara_raduno' 'R'%}">Raduno(25)</a>
+                                </div>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Giocatori</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'thetalentscout:lista_giocatori' %}">Modifica</a>
+                        <a href="{% url 'thetalentscout:new_giocatore' %}">Nuovo</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Gestione Password</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'thetalentscout:change_password' %}">Cambio Password</a>
+                    </div>
+                </li>
+{#              Il menù TABELLE deve comparire solo se utente é MASTER#}
+                {% if user.first_name == "MASTER" %}
+                   <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Tabelle</a>
+                        <div class="dropdown-content">
+                            <a href="{% url 'thetalentscout:categoria' %}">Categorie</a>
+                            <a href="{% url 'thetalentscout:calciare' %}">Calciare</a>
+                            <a href="{% url 'thetalentscout:conduzione' %}">Conduzione</a>
+                            <a href="{% url 'thetalentscout:controllo' %}">Controllo</a>
+                            <a href="{% url 'thetalentscout:fisicita' %}">Fisicità</a>
+                            <a href="{% url 'thetalentscout:giocoditesta' %}">Gioco di Testa</a>
+                            <a href="{% url 'thetalentscout:giudizio' %}">Giudizio</a>
+                            <a href="{% url 'thetalentscout:marcatura' %}">Marcatura</a>
+                            <a href="{% url 'thetalentscout:recuperapalla' %}">Recupera Palla</a>
+                            <a href="{% url 'thetalentscout:smarcamento' %}">Smarcamento</a>
+                            <a href="{% url 'thetalentscout:struttura' %}">Struttura</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Gestione Utenti</a>
+                        <div class="dropdown-content">
+                            <a href="{% url 'thetalentscout:password_reset' %}">Nuovo</a>
+
+                        </div>
+                    </li>
+
+                {% endif %}
+        </div>
+    </header>
+    <main>
+        {% block blocco_main %}
+
+        {% endblock blocco_main %}
+        {% block blocco_dettaglio %}
+
+        {% endblock blocco_dettaglio %}
+    </main>
+    <footer>
+    </footer>
+    <footerinfo>
+    </footerinfo>
+</body>
+
+
+</html>

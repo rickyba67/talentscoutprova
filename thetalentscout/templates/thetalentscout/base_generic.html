@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="it">
+
+{% load static from staticfiles %}
+
+<head>
+
+  <meta charset="utf-8" />
+
+	<title>The Talent Scout</title>
+	<meta name="accesso" content="Pagina di accesso" />
+	<meta name="author" content="Riccardo" />
+
+    <link rel="stylesheet" href="{% static 'css/comune_a_tutti.css' %}">
+    <link rel="stylesheet" href="{% static 'css/accesso.css' %}">
+
+</head>
+
+<body>
+    <header>
+        <h1>The Talent Scout</h1>
+        <h2>Accesso Area Riservata</h2>
+        <div id="box2"></div>
+    </header>
+    <main>
+        <nav>
+            {% block content1 %}
+
+            {% endblock content1 %}
+        </nav>
+        <nav1>
+            {% block content2 %}
+
+            {% endblock content2 %}
+        </nav1>
+    </main>
+    <footer>
+        <header>
+            <h2>I migliori professionisti al servizio del calciatore</h2>
+        </header>
+    </footer>
+
+</body>
+</html>

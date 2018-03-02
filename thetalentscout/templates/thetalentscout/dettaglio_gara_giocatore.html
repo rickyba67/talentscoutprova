@@ -1,0 +1,63 @@
+{% extends "thetalentscout/base.html" %}
+{% block blocco_sezione %}
+    Dettaglio Gara
+{% endblock blocco_sezione %}
+{% block blocco_main %}
+    {% if posts %}
+        <div class="aspettoglobale">
+            <div class="aspetto_sx">
+                {% for partitas in gara %}
+                    <div class="anagraficapartita">
+                        <div class="infopartita nonomepartita">
+                            <tspan><strong>Categoria: </strong><em>{{ partitas.categoria.desccategoria }}</em></tspan><br>
+                            <tspan><strong>Incontro: </strong>
+                                <a href="{% url 'thetalentscout:mod_gara'  partitas.id%}"
+                                <em class="partita">{{ partitas.squadrain }} - {{ partitas.squadraout }} = {{ partitas.risultato }}</em></a>
+                            </tspan><br>
+                            <tspan><strong>Data incontro: </strong>
+                                <em>{{ partitas.dataincontro }}</em>
+                            </tspan><br>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="blocco_foto">
+                        <a class="foto_giocatoregara" href="{% url 'thetalentscout:foto_giocatore_gara' idc partitas.id %}">Visualizza Foto -></a>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="aspetto_dx">
+                <fieldset id="dettaglio">
+                    {% for partita in posts %}
+                        <legend id="listadettaglio">Visionato da: <strong>{{ partita.utente }}</strong>  (<em>{{ partita.giudizio }}</em>)</legend>
+                            {{ partita.struttura }} <br/>
+                            {{ partita.fisicita }} <br/>
+                            {{ partita.calciare }} <br/>
+                            {{ partita.conduzione }} <br/>
+                            {{ partita.controllo }} <br/>
+                            {{ partita.recuperapalla }} <br/>
+                            {{ partita.smarcamento }} <br/>
+                            {{ partita.marcatura }} <br/>
+                            {{ partita.giocoditesta }} <br/>
+                            {% if partita.forza == True %} Forza<br/> {% endif %}
+                            {% if partita.resistenza == True %} Resistenza<br/> {% endif %}
+                            {% if partita.velocita == True %} Velocità<br/> {% endif %}
+                            {% if partita.rapidita == True %} Rapidità<br/> {% endif %}
+                            {% if partita.agilita == True %} Agilità<br/> {% endif %}
+                            {% if partita.coordinazione == True %} Coordinazione<br/> {% endif %}
+                            {% if partita.personalita == True %} Personalità<br/> {% endif %}
+                            {% if partita.concentrazione == True %} Concentrazione<br/> {% endif %}
+                            {% if partita.temperamento == True %} Temperamento<br/> {% endif %}
+                            {% if partita.aggressivita == True %} Aggressività<br/> {% endif %}
+                            {% if partita.autocontrollo == True %} Autocontrollo<br/> {% endif %}
+                            {% if partita.disponibilita == True %} Disponibilità<br/> {% endif %}
+                            {% if partita.assomiglia == null %} {% else %} Assomiglia a: {{ partita.assomiglia }}<br/> {% endif %}
+                    {% endfor %}
+                </fieldset>
+            </div>
+        </div>
+    {% else %}
+        <p>Nessuna dato inserito.</p>
+    {% endif %}
+
+
+{% endblock blocco_main %}

@@ -1,0 +1,471 @@
+
+thead {color:white;}
+
+tbody {color:silver;}
+
+tfoot {color:red;}
+
+.squadrain{
+    text-align: center;
+}
+
+.squadrain div{
+    display: inline;
+}
+
+.cognomenome{
+    text-align: center;
+}
+
+.formazione{
+    padding: 0px;
+    background-color: seagreen;
+    text-align: center;
+}
+
+div label{
+    color: white;
+}
+
+.datigara{
+    text-align: center;
+}
+
+.labelclass{
+    font-size: 12px;
+}
+
+.bloccomodulo{
+    margin-left: 50px;
+    padding-left: 50px;
+}
+
+#inputdata{
+    width: 100px;
+}
+
+#inputrisultato{
+    width: 45px;
+    text-align: center;
+    height: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 0px;
+}
+
+.labelrisultato{
+    text-align: center;
+    padding: 4px;
+}
+
+.squadrain .input_digara{
+    margin-top: 0px;
+}
+
+.bloccomodulo .input_digara{
+    width: 60px;
+    margin-top: 0px;
+}
+
+.nome_digara{
+    height: 10px;
+    margin-bottom: 3px;
+    width: 30%;
+}
+
+.numero_gara{
+    color: black;
+    font-weight: bold;
+}
+
+#panchina{
+    font-weight: normal;
+}
+
+.button1{
+    padding: 3px;
+    margin-top: 0px;
+}
+
+/*CELLULARE*/
+@media screen and (max-width:296px) {
+    .squadre{
+        display: grid;
+    }
+    .datigara{
+        display: inline-flex;
+    }
+    .squadrain div{
+        font-size: 9px;
+    }
+
+    .labelclass{
+        font-size: 9px;
+    }
+    .squadrain .input_digara{
+        font-size: 9px;
+        width: 100px;
+        height: 10px;
+        margin-top: 2px;
+        margin-left: 1px;
+    }
+    .bloccomodulo{
+        margin-left: -50px;
+    }
+
+    .bloccomodulo .input_digara{
+        width: 50px;
+        margin-left: 1px;
+        height: 8px;
+    }
+
+    #inputrisultato{
+        font-size: 9px;
+        height: auto;
+        width: 30px;
+    }
+    .cognomenome{
+        font-size: 9px;
+    }
+
+    .cat_gara{
+        font-size: 9px;
+        padding-left: 10px;
+    }
+    .cat .selettori{
+        font-size: 9px;
+        margin-top: 3px;
+        width: auto;
+    }
+    .datigara .datagara .input_digara{
+        font-size: 9px;
+        height: 8px;
+    }
+    .nome_digara{
+        font-size: 9px;
+        height: 9px;
+        width: 35%;
+        margin-left: auto;
+    }
+    #inputdata{
+        width: 65px;
+    }
+}
+@media screen and (min-width:297px) and (max-width:481px) {
+    .squadre{
+        display: grid;
+    }
+    .datigara{
+        display: inline-flex;
+    }
+    .squadrain div{
+        font-size: 10px;
+    }
+
+    .labelclass{
+        font-size: 10px;
+    }
+    .squadrain .input_digara{
+        font-size: 10px;
+        width: 100px;
+        height: 10px;
+        margin-top: 2px;
+        margin-left: 1px;
+    }
+    .bloccomodulo{
+        margin-left: -50px;
+    }
+
+    .bloccomodulo .input_digara{
+        width: 50px;
+        margin-left: 1px;
+        height: 8px;
+    }
+
+    #inputrisultato{
+        font-size: 10px;
+        height: auto;
+        width: 30px;
+    }
+    .cognomenome{
+        font-size: 10px;
+    }
+
+    .cat_gara{
+        font-size: 10px;
+        padding-left: 10px;
+    }
+    .cat .selettori{
+        font-size: 10px;
+        margin-top: 3px;
+        width: auto;
+    }
+    .datigara .datagara .input_digara{
+        font-size: 10px;
+        height: 8px;
+    }
+    .nome_digara{
+        font-size: 9px;
+        height: 9px;
+        width: 35%;
+        margin-left: auto;
+    }
+    #inputdata{
+        width: 65px;
+    }
+}
+
+/*TABLET*/
+@media screen and (min-width:481px) and (max-width:614px) {
+    .squadre{
+        display: grid;
+    }
+    .datigara{
+        display: inline-flex;
+    }
+    .squadrain div{
+        font-size: 11px;
+    }
+
+    .labelclass{
+        font-size: 11px;
+    }
+    .squadrain .input_digara{
+        font-size: 11px;
+        width: 100px;
+        height: 10px;
+        margin-top: 2px;
+        margin-left: 1px;
+    }
+    .bloccomodulo{
+        margin-left: -50px;
+    }
+
+    .bloccomodulo .input_digara{
+        width: 50px;
+        margin-left: 1px;
+    }
+
+    #inputrisultato{
+        font-size: 11px;
+        height: auto;
+        width: 30px;
+    }
+    .cognomenome{
+        font-size: 11px;
+    }
+
+    .cat_gara{
+        font-size: 11px;
+        padding-left: 10px;
+    }
+    .cat .selettori{
+        font-size: 11px;
+    }
+    .datigara .datagara .input_digara{
+        font-size: 11px;
+    }
+    .nome_digara{
+        font-size: 11px;
+    }
+}
+@media screen and (min-width:615px) and (max-width:650px) {
+    .datigara{
+        display: inline-flex;
+    }
+    .squadrain div{
+        font-size: 11px;
+    }
+
+    .labelclass{
+        font-size: 11px;
+    }
+    .squadrain .input_digara{
+        font-size: 11px;
+        width: 100px;
+        height: 10px;
+        margin-top: 2px;
+        margin-left: 1px;
+    }
+    .bloccomodulo{
+        margin-left: -50px;
+    }
+
+    .bloccomodulo .input_digara{
+        width: 50px;
+        margin-left: 1px;
+    }
+
+    #inputrisultato{
+        font-size: 11px;
+        height: auto;
+        width: 30px;
+    }
+    .cognomenome{
+        font-size: 11px;
+    }
+
+    .cat_gara{
+        font-size: 11px;
+        padding-left: 10px;
+    }
+    .cat .selettori{
+        font-size: 11px;
+    }
+    .datigara .datagara .input_digara{
+        font-size: 11px;
+    }
+    .nome_digara{
+        font-size: 11px;
+    }
+}
+
+@media screen and (min-width:651px) and (max-width:741px) {
+    .squadrain div{
+        font-size: 11px;
+    }
+
+    .labelclass{
+        font-size: 11px;
+    }
+    .squadrain .input_digara{
+        font-size: 11px;
+        width: 100px;
+        height: 10px;
+        margin-top: 2px;
+    }
+    .bloccomodulo{
+        margin-left: -50px;
+    }
+
+    .bloccomodulo .input_digara{
+        width: 50px;
+        margin-left: 5px;
+    }
+
+    #inputrisultato{
+        font-size: 11px;
+        height: auto;
+        width: 30px;
+    }
+    .cognomenome{
+        font-size: 11px;
+    }
+
+    .cat_gara{
+        font-size: 11px;
+    }
+    .cat .selettori{
+        font-size: 11px;
+    }
+    .datigara .datagara .input_digara{
+        font-size: 11px;
+    }
+    .nome_digara{
+        font-size: 11px;
+    }
+
+}
+
+/*COMPUTER*/
+@media screen and (min-width:741px) and (max-width:768px) {
+    .squadrain div{
+        font-size: 11px;
+    }
+
+    .labelclass{
+        font-size: 11px;
+    }
+    .squadrain .input_digara{
+        font-size: 11px;
+        width: 100px;
+    }
+    .bloccomodulo{
+        margin-left: -15px;
+    }
+
+    .bloccomodulo .input_digara{
+        width: 50px;
+    }
+
+    #inputrisultato{
+        font-size: 11px;
+        height: auto;
+        width: 30px;
+    }
+    .cognomenome{
+        font-size: 11px;
+    }
+
+    .cat_gara{
+        font-size: 11px;
+    }
+    .cat .selettori{
+        font-size: 11px;
+    }
+    .datigara .datagara .input_digara{
+        font-size: 11px;
+    }
+    .nome_digara{
+        font-size: 11px;
+    }
+}
+
+@media screen and (min-width:769px) and (max-width:964px) {
+
+    .squadrain div{
+        font-size: 11px;
+    }
+
+    .labelclass{
+        font-size: 11px;
+    }
+    .squadrain .input_digara{
+        font-size: 11px;
+        width: 100px;
+    }
+    .bloccomodulo{
+        margin-left: -15px;
+    }
+
+    .bloccomodulo .input_digara{
+        width: 50px;
+    }
+
+    #inputrisultato{
+        font-size: 11px;
+        height: auto;
+        width: 30px;
+    }
+    .cognomenome{
+        font-size: 11px;
+    }
+
+    .cat_gara{
+        font-size: 11px;
+    }
+    .cat .selettori{
+        font-size: 11px;
+    }
+    .datigara .datagara .input_digara{
+        font-size: 11px;
+    }
+    .nome_digara{
+        font-size: 11px;
+    }
+}
+
+@media screen and (min-width:965px) and (max-width:1149px) {
+    .bloccomodulo{
+        margin-left: -43px;
+    }
+
+    }
+
+    @media screen and (min-width:1150px) {
+
+    .bloccomodulo{
+        margin-left: 50px;
+    }
+
+}

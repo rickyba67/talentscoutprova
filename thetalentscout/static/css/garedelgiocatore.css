@@ -1,0 +1,197 @@
+* {
+     font-family: "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+     font-size: 14px;
+}
+
+#picture {
+    float: left;
+}
+
+.anagrafica{
+    color: white;
+    padding-top: 10px;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.info {
+    margin: 10px;
+}
+.nome{
+    /*background-color: red;*/
+    width: 60%;
+    text-align: center;
+    word-wrap: break-word; /*break-word -> spezza la parola in due se non entra nel box */
+}
+
+.nonome {
+    -webkit-order: -1;
+    order: -1;
+    padding-left: 15px;
+    /*background-color: aqua;*/
+    /*margin: 5px;*/
+    width: 25%;
+    border: 1px solid silver;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    /*font-size: 5px;*/
+}
+
+.foto{
+    -webkit-order: -2;
+    order: -2;
+}
+
+.anagrafica span{
+    font-size: 45px;
+    font-weight: bold;
+    text-align: center;
+}
+
+em{
+    font-size: 110%;
+    color: silver;
+}
+
+.visionato{
+    color: silver;
+    padding-left: 15px;
+    /*font-size: 25px;*/
+}
+
+.visionato p{
+    /*font-size: 15px;*/
+    margin-top: 0px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    /*text-align: center;*/
+}
+table {
+    margin-top: 5px;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+main div table tr th{
+   color: black;
+   background-color: cornflowerblue;
+}
+
+#primacolonna {
+    width: 200px;
+}
+
+#colonne {
+    width: 200px;
+}
+
+main div table tr td{
+   color: black;
+   background-color: silver;
+}
+
+main div table tr td a{
+    font-weight: bold;
+    color: #03418C;
+    text-decoration: none;
+}
+
+.nuovodettaglio{
+    margin-left: 9px;
+}
+
+/*CELLULARE*/
+@media screen and (max-width:480px) {
+    .nome{
+        width: 100%;
+    }
+
+    .info {
+        margin: 5px;
+    }
+    .info span{
+        font-size: 15px;
+    }
+
+    .nonome{
+        display: none;
+    }
+
+    .anagrafica{
+        /*display: inline;*/
+        text-align: center;
+    }
+
+    #picture{
+        width: 70px;
+        height: 90px;
+    }
+
+    .visionato{
+        padding-left: 10px;
+        padding-top: -10px;
+    }
+    .visionato p strong{
+        font-size: 10px;
+    }
+
+    .visionato p em{
+        font-size: 13px;
+    }
+
+    .visionato p {
+        margin-bottom: 5px;
+    }
+
+    tr th, td {
+        font-size: 9px;
+        padding: 2px;
+    }
+
+    a {
+        font-size: 8px;
+        padding: 1px;
+    }
+
+}
+
+/*TABLET*/
+@media screen and (min-width:481px) and (max-width:768px) {
+    .nome{
+        width: 100%;
+    }
+
+    .info span{
+        font-size: 25px;
+    }
+
+    .nonome{
+        display: none;
+    }
+
+    tr th, td, a {
+        font-size: 10px;
+        padding: 3px;
+    }
+
+}
+
+/*COMPUTER*/
+@media screen and (min-width:769px)
+{
+}
+
+
+
+

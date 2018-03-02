@@ -1,0 +1,98 @@
+* {
+     font-family: "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+     font-size: 14px;
+}
+
+.partita{
+    text-decoration: none;
+    font-size: 110%;
+    color: silver;
+}
+
+.foto_giocatoregara{
+    text-decoration: none;
+    color: silver;
+}
+
+.blocco_foto{
+    margin-left: 20px;
+}
+
+.anagraficapartita{
+    color: white;
+    padding-top: 10px;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.infopartita {
+    margin: 10px;
+}
+
+.nonomepartita {
+    -webkit-order: -1;
+    order: -1;
+    padding-left: 15px;
+    /*background-color: aqua;*/
+    /*margin: 5px;*/
+    width: 90%;
+    border: 1px solid silver;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    /*font-size: 5px;*/
+}
+
+.dettaglio_gara{
+    padding-left: 15px;
+    width: 500px;
+    border: 1px solid silver;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 10px;
+    color: white;
+    font-size: 110%;
+
+}
+
+#dettaglio{
+    margin-top: 5px;
+    width: 90%;
+    height: auto;
+    color: white;
+    padding-left: 15px;
+    margin-left: 10px;
+
+}
+
+.aspettoglobale{
+    color: white;
+    padding-top: 10px;
+    display: -webkit-flex;
+    /*display: flex;*/
+    /*text-align: -webkit-center;*/
+}
+
+.aspetto_dx, .aspetto_sx{
+    width: 50%;
+}
+
+/*CELLULARE*/
+@media screen and (max-width:480px) {
+    .label_abilita {
+        width: 132px;
+    }
+
+    .check_abilita {
+        margin-left: -40px;
+    }
+}
+/*TABLET*/
+@media screen and (min-width:481px) and (max-width:768px) {
+    .label_abilita {
+         width: 210px;
+    }
+
+    .check_abilita {
+        /*padding-left: 100px;*/
+    }
+}

@@ -1,0 +1,131 @@
+{% extends "thetalentscout/base.html" %}
+
+{% block blocco_sezione %}
+    Inserimento Gara
+{% endblock blocco_sezione %}
+{% block blocco_main %}
+    <form method="POST" class="post-form">{% csrf_token %}
+    <div class="datigara">
+        <div class="datagara">
+            <label class="cat_gara">Data:</label><input class="input_digara" id="inputdata" type="text" {{ form.dataincontro }}
+        </div>
+        <div class="cat">
+            <label class="cat_gara" for="id_categoria">Categoria:</label>
+            <select name="categoria" class="selettori" required id={{ form.categoria }}</select><label class="hidden">{{ form.tipo }}</label><br>
+        </div>
+    </div>
+    <table>
+        <thead>
+            <tr class="squadre">
+                <th class="squadrain">
+                    <div class="SqIn">Squadra In</div>
+                    <input class="input_digara" type="text" {{ form.squadrain }}
+                    <div class="bloccomodulo">
+                        <label class="labelclass">modulo:</label><input class="input_digara" type="text" {{ form.moduloin }}
+                    </div>
+                </th>
+                <th class="squadrain">
+                    <div class="SqIn">Squadra Out</div>
+                    <input class="input_digara" type="text" {{ form.squadraout }}
+                    <div class="bloccomodulo">
+                        <label class="labelclass">modulo:</label><input class="input_digara" type="text" {{ form.moduloout }}
+                    </div>
+                </th>
+            </tr>
+        </thead>
+        <table class="ris">
+            <th class="labelrisultato"><label class="labelclass">Risultato:</label><input class="input_digara" id="inputrisultato" type="text" {{ form.risultato }}</th>
+        </table>
+        <table>
+            <thead>
+                <th class="cognomenome">Cognome Nome</th><th class="cognomenome">Cognome Nome</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="formazione"><label class="numero_gara"><a>[  1]</a></label><input class="nome_digara" type="text" {{ form.cognomein1 }} <input class="nome_digara" type="text" {{ form.nomein1 }}</td>
+                    <td class="formazione"><label class="numero_gara"><a>[  1]</a></label><input class="nome_digara" type="text" {{ form.cognomeout1 }} <input class="nome_digara" type="text" {{ form.nomeout1 }}</td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara"><a>[ 2]</a></label><input class="nome_digara" type="text" {{ form.cognomein2 }} <input class="nome_digara" type="text" {{ form.nomein2 }}</td>
+                    <td class="formazione"><label class="numero_gara"><a>[ 2]</a></label><input class="nome_digara" type="text" {{ form.cognomeout2 }}  <input class="nome_digara" type="text" {{ form.nomeout2 }}</td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara"><a>[ 3]</a></label><input class="nome_digara" type="text" {{ form.cognomein3 }} <input class="nome_digara" type="text" {{ form.nomein3 }}</td>
+                    <td class="formazione"><label class="numero_gara"><a>[ 3]</a></label><input class="nome_digara" type="text" {{ form.cognomeout3 }} <input class="nome_digara" type="text" {{ form.nomeout3 }}</td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara"><a>[ 4]</a></label><input class="nome_digara" type="text" {{ form.cognomein4 }} <input class="nome_digara" type="text" {{ form.nomein4 }}</td>
+                    <td class="formazione"><label class="numero_gara"><a>[ 4]</a></label><input class="nome_digara" type="text" {{ form.cognomeout4 }} <input class="nome_digara" type="text" {{ form.nomeout4 }}</td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara"><a>[ 5]</a></label><input class="nome_digara" type="text" {{ form.cognomein5 }} <input class="nome_digara" type="text" {{ form.nomein5 }}</td>
+                    <td class="formazione"><label class="numero_gara"><a>[ 5]</a></label><input class="nome_digara" type="text" {{ form.cognomeout5 }} <input class="nome_digara" type="text" {{ form.nomeout5 }}</td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara"><a>[ 6]</a></label><input class="nome_digara" type="text" {{ form.cognomein6 }} <input class="nome_digara" type="text" {{ form.nomein6 }}</td>
+                    <td class="formazione"><label class="numero_gara"><a>[ 6]</a></label><input class="nome_digara" type="text" {{ form.cognomeout6 }} <input class="nome_digara" type="text" {{ form.nomeout6 }}</td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara"><a>[ 7]</a></label><input class="nome_digara" type="text" {{ form.cognomein7 }} <input class="nome_digara" type="text" {{ form.nomein7 }}</td>
+                    <td class="formazione"><label class="numero_gara"><a>[ 7]</a></label><input class="nome_digara" type="text" {{ form.cognomeout7 }} <input class="nome_digara" type="text" {{ form.nomeout7 }}</td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara"><a>[ 8]</a></label><input class="nome_digara" type="text" {{ form.cognomein8 }} <input class="nome_digara" type="text" {{ form.nomein8 }}</td>
+                    <td class="formazione"><label class="numero_gara"><a>[ 8]</a></label><input class="nome_digara" type="text" {{ form.cognomeout8 }} <input class="nome_digara" type="text" {{ form.nomeout8 }}</td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara"><a>[ 9]</a></label><input class="nome_digara" type="text" {{ form.cognomein9 }} <input class="nome_digara" type="text" {{ form.nomein9 }}</td>
+                    <td class="formazione"><label class="numero_gara"><a>[ 9]</a></label><input class="nome_digara" type="text" {{ form.cognomeout9 }} <input class="nome_digara" type="text" {{ form.nomeout9 }}</td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara"><a>[10]</a></label><input class="nome_digara" type="text" {{ form.cognomein10 }} <input class="nome_digara" type="text" {{ form.nomein10 }}</td>
+                    <td class="formazione"><label class="numero_gara"><a>[10]</a></label><input class="nome_digara" type="text" {{ form.cognomeout10 }} <input class="nome_digara" type="text" {{ form.nomeout10 }}</td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara"><a>[11]</a></label><input class="nome_digara" type="text" {{ form.cognomein11 }} <input class="nome_digara" type="text" {{ form.nomein11 }}</td>
+                    <td class="formazione"><label class="numero_gara"><a>[11]</a></label><input class="nome_digara" type="text" {{ form.cognomeout11 }} <input class="nome_digara" type="text" {{ form.nomeout11 }}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td class="formazione"><label class="numero_gara" id="panchina"><a>[12]</a></label><input class="nome_digara" type="text"  {{ form.cognomein12 }} <input class="nome_digara" type="text"  {{ form.nomein12 }}</td>
+                    <td class="formazione"><label class="numero_gara" id="panchina"><a>[12]</a><input class="nome_digara" type="text"  {{ form.cognomeout12 }} <input class="nome_digara" type="text"  {{ form.nomeout12 }}</label></td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara" id="panchina"><a>[13]</a></label><input class="nome_digara" type="text"  {{ form.cognomein13 }} <input class="nome_digara" type="text"  {{ form.nomein13 }}</td>
+                    <td class="formazione"><label class="numero_gara" id="panchina"><a>[13]</a></label><input class="nome_digara" type="text"  {{ form.cognomeout13 }} <input class="nome_digara" type="text"  {{ form.nomeout13 }}</td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara" id="panchina"><a>[14]</a></label><input class="nome_digara" type="text"  {{ form.cognomein14 }} <input class="nome_digara" type="text"  {{ form.nomein14 }}</td>
+                    <td class="formazione"><label class="numero_gara" id="panchina"><a>[14]</a></label><input class="nome_digara" type="text"  {{ form.cognomeout14 }} <input class="nome_digara" type="text"  {{ form.nomeout14 }}</td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara" id="panchina"><a>[15]</a></label><input class="nome_digara" type="text" {{ form.cognomein15 }} <input class="nome_digara" type="text" {{ form.nomein15 }}</td>
+                    <td class="formazione"><label class="numero_gara" id="panchina"><a>[15]</a></label><input class="nome_digara" type="text" {{ form.cognomeout15 }} <input class="nome_digara" type="text" {{ form.nomeout15 }}</td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara" id="panchina"><a>[16]</a></label><input class="nome_digara" type="text" {{ form.cognomein16 }} <input class="nome_digara" type="text" {{ form.nomein16 }}</td>
+                    <td class="formazione"><label class="numero_gara" id="panchina"><a>[16]</a></label><input class="nome_digara" type="text" {{ form.cognomeout16 }} <input class="nome_digara" type="text" {{ form.nomeout16 }}</td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara" id="panchina"><a>[17]</a></label><input class="nome_digara" type="text" {{ form.cognomein17 }} <input class="nome_digara" type="text" {{ form.nomein17 }}</td>
+                    <td class="formazione"><label class="numero_gara" id="panchina"><a>[17]</a></label><input class="nome_digara" type="text" {{ form.cognomeout17 }} <input class="nome_digara" type="text" {{ form.nomeout17 }}</td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara" id="panchina"><a>[18]</a></label><input class="nome_digara" type="text" {{ form.cognomein18 }} <input class="nome_digara" type="text" {{ form.nomein18 }}</td>
+                    <td class="formazione"><label class="numero_gara" id="panchina"><a>[18]</a></label><input class="nome_digara" type="text" {{ form.cognomeout18 }} <input class="nome_digara" type="text" {{ form.nomeout18 }}</td>
+                </tr>
+                {% block blocco_amichevole %}
+
+                {% endblock blocco_amichevole %}
+                {% block blocco_raduno %}
+
+                {% endblock blocco_raduno %}
+            </tfoot>
+        </table>
+    </table>
+    <div class="nomecognome">
+        <input id="search_submit" class="button1" type="submit" value="Salvataggio"/>
+    </div>
+    </form>
+{% endblock blocco_main %}

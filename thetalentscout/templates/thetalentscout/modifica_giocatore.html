@@ -1,0 +1,74 @@
+{% extends "thetalentscout/base.html" %}
+{% block blocco_sezione %}
+    Modifica Giocatore
+{% endblock blocco_sezione %}
+{% block blocco_main %}
+    <form method="POST" enctype="multipart/form-data" class="post-form">{% csrf_token %}
+        {% if giocat.foto %}
+            <img id="picture" src="{{ form.foto.initial.url }}"/>
+{#            width="140" height="180"/>#}
+        {% endif %}
+        <div class="dati anagrafe">
+            <div class="nomecognome">
+                <label for="cognome"><strong>Cognome:</strong><input id="cognome" type="text" {{ form.cognome }}</label>
+                <label for="nome"><strong>Nome:</strong><input id="nome" type="text" {{ form.nome }}</label>
+            </div>
+        </div>
+
+        <div class="box">
+            <p1>
+                <label1 for="a">Nato a:</label1>
+                <input id="a" type="text" {{ form.luogonascita }}
+            </p1>
+
+            <p1>
+                <label1 for="b">il</label1>
+                <input id="b" type="text" pattern="(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/\d{4}" placeholder="gg/mm/aaaa" {{ form.datanascita }}
+            </p1>
+
+            <p1>
+                <label1 for="c">Telefono Genitore:</label1>
+                <input id="c" type="number" {{ form.telefonogenitore }}
+            </p1>
+            <p1>
+                <label1 for="d">Telefono Giocatore:</label1>
+                <input id="d" type="number" {{ form.telefonogiocatore }}
+            </p1>
+            <p1>
+                <label1 for="e">Foto:</label1>
+                <input id="e" type="file" name="foto" {{ form.foto }}
+            </p1>
+            <p1>
+                <label1 for="e">Società:</label1>
+                <input id="e" type="text" {{ form.societaappertenenza }}
+            </p1>
+            <p1>
+                <label1 for="f">Ruolo:</label1>
+                <input id="f" type="text" {{ form.ruolo }}
+            </p1>
+            <p1>
+                <label1 for="g">Piede:</label1>
+                <select id="g" name="piede" required id={{ form.piede }}
+            </p1>
+            <p1>
+                <label1 for="h">Sistema Ideale:</label1>
+                <input id="h" type="text" {{ form.sistemaideale }}
+            </p1>
+            <p1>
+                <label1 for="i">Scadenza Contratto:</label1>
+                <input id="i" type="text" pattern="(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/\d{4}" placeholder="gg/mm/aaaa" {{ form.scadenzacontratto }}
+            </p1>
+            <p1>
+                <label1 for="l">Agente:</label1>
+                <input id="l" type="text" {{ form.agente }}
+            </p1>
+            <p1>
+                <label1 for="m">Ingaggio in €:</label1>
+                <input id="m" type="text" {{ form.ingaggio }}
+            </p1>
+        </div>
+        <div class="nomecognome">
+            <input id="search_submit" class="button" type="submit" value="Salvataggio"/>
+        </div>
+    </form>
+{% endblock blocco_main %}

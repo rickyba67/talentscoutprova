@@ -1,0 +1,44 @@
+{% extends "thetalentscout/base.html" %}
+{% block blocco_sezione %}
+    Controllo
+{% endblock blocco_sezione %}
+{% block blocco_main %}
+    <script LANGUAGE="JavaScript"><!--
+        function myFunction() {
+            document.getElementById("myDIV").hidden=false;
+            document.getElementById("search_submit").hidden=false;
+            document.getElementById("abilita").hidden=true;
+        }
+    //-->
+    </script>
+
+    <div class="nomecognome">
+{#        <input id="search_submit" type="nuovo" onClick="window.location.href='{% url 'thetalentscout:new_categoria' %}'" value="Inserisci nuova categoria"/></input>#}
+        <dl class="classe_dl">
+            <section id="lista">
+                {% if lista_descr %}
+                    {% for descrizione in lista_descr %}
+                        <dt><a class="descrizione">{{ descrizione.desccontrollo }}</a></dt>
+                    {% endfor %}
+
+                {% else %}
+                    <p>Nessuna descrizione nel sistema.</p>
+                {% endif %}
+            </section>
+        </dl>
+    </div>
+    <div class="nomecognome">
+        <button id="abilita" class="button1" onclick="myFunction()">Inserimento</button>
+    </div>
+    <form method="POST" class="post-form">{% csrf_token %}
+        <dl>
+            <section id="lista">
+                <dt><a hidden id="myDIV" class="descrizione">{{ form.as_p }}</a></dt>
+            </section>
+        </dl>
+        <div class="nomecognome">
+            <input hidden id="search_submit" class="button1" type="submit" value="Salvataggio"/>
+        </div>
+
+    </form>
+{% endblock blocco_main %}

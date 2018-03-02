@@ -1,0 +1,101 @@
+{% extends "thetalentscout/base.html" %}
+
+{% block blocco_sezione %}
+    Gare Del Giocatore
+{% endblock blocco_sezione %}
+
+{% block blocco_main %}
+    <div class="anagrafica">
+        {% for anagraf in anagrafica %}
+            <div class="info nome">
+                <span>{{ anagraf.cognome.upper }} {{ anagraf.nome.upper }}</span>
+            </div>
+            <div class="info foto">
+            {% if anagraf.foto %}
+                <img id="picture" src="{{ anagraf.foto.url }}" width="140" height="180"/>
+            {% endif %}
+            </div>
+            <div class="info nonome">
+                <tspan><strong>Nato a:</strong><em>
+                    {% if anagraf.luogonascita == None %} </td> {% else %} {{ anagraf.luogonascita }} {% endif %}
+                </em></tspan><br>
+                <tspan><strong>il</strong><em> {{ anagraf.datanascita }}</em></tspan><br>
+                <tspan><strong>Società:</strong><em>
+                    {% if anagraf.societaappertenenza == None %} </td> {% else %} {{ anagraf.societaappertenenza }} {% endif %}
+                </em></tspan><br>
+                <tspan><strong>Ruolo:</strong><em>
+                    {% if anagraf.ruolo == None %} </td> {% else %} {{ anagraf.ruolo }} {% endif %}
+                </em><br>
+                <strong>Piede:</strong><em> {{ anagraf.piede }}</em> </tspan><br>
+                <tspan><strong>Sistema Ideale:</strong><em>
+                    {% if anagraf.sistemaideale == None %} </td> {% else %} {{ anagraf.sistemaideale }} {% endif %}
+                </em> </tspan><br>
+                <tspan><strong>Scadenza Contratto:</strong><em>
+                    {% if anagraf.scadenzacontratto == None %} </td> {% else %} {{ anagraf.scadenzacontratto }} {% endif %}
+                </em> </tspan><br>
+                <tspan><strong>Agente:</strong><em>
+                    {% if anagraf.agente == None %} </td> {% else %} {{ anagraf.agente }} {% endif %}
+                </em> </tspan><br>
+                <tspan><strong>Ingaggio in €:</strong><em>
+                    {% if anagraf.ingaggio == None %} </td> {% else %} {{ anagraf.ingaggio }} {% endif %}
+                </em></tspan>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock blocco_main %}
+{% block blocco_dettaglio %}
+    <div class="visionato">
+        {% if conta %}
+
+            <p><strong>Il Giocatore è stato visionato in totale:</strong><em> {{ conta }} {% if conta == 1 %}</em>
+                                                            <strong>volta</strong>
+                                                        {% else %}
+                                                            <strong>volte</strong>
+                                                        {% endif %}
+            </p>
+        {% else %}
+            <p><strong>Il giocatore non è stato mai visionato</strong></p>
+        {% endif %}
+    </div>
+    {% for anagraf in anagrafica %}
+        <input class="nuovodettaglio" type="nuovo" onClick="window.location.href='{% url 'thetalentscout:new_gara_giocatore' anagraf.id %}'" value="Inserisci Dettaglio"/></a>
+
+        <input class="nuovodettaglio" type="nuovo" onClick="window.location.href='{% url 'thetalentscout:export_users_xls' anagraf.id %}'" value="Esporta in Excel"/></a>
+
+        <input class="nuovodettaglio" type="nuovo" onClick="window.location.href='{% url 'thetalentscout:some_view' anagraf.id %}'" value="Esporta in PDF"/></a>
+    {% endfor %}
+    <div>
+    {% if posts %}
+        <table>
+            <tr>
+                <th id="primacolonna">Data</th>
+                <th id="colonne">Giudizio</th>
+                <th id="colonne">Struttura</th>
+                <th id="colonne">Fisicità</th>
+                <th id="colonne">Forza</th>
+                <th id="colonne">Resistenza</th>
+                <th id="colonne">Velocità</th>
+                <th id="colonne">Rapidità</th>
+                <th id="colonne">Agilità</th>
+                <th id="colonne">Coordinazione</th>
+            </tr>
+
+            {% for gara in dettagli %}
+               <tr>
+                   <td><a href="{% url 'thetalentscout:modifica_gara_giocatore'  gara.dettaglio.giocatore_id gara.dettaglio.gara_id%}"> {{ gara.dettaglio.gara.dataincontro }}</a> </td>
+                    <td> {{ gara.dettaglio.giudizio }} </td>
+                    <td> {{ gara.dettaglio.struttura }} </td>
+                    <td> {{ gara.dettaglio.fisicita }} </td>
+                    {% if gara.dettaglio.forza == True %} <td>SI</td> {% else %} <td> </td> {% endif %}
+                    {% if gara.dettaglio.resistenza == True %} <td>SI</td> {% else %} <td> </td> {% endif %}
+                    {% if gara.dettaglio.velocita == True %} <td>SI</td> {% else %} <td> </td> {% endif %}
+                    {% if gara.dettaglio.rapidita == True %} <td>SI</td> {% else %} <td> </td> {% endif %}
+                    {% if gara.dettaglio.agilita == True %} <td>SI</td> {% else %} <td> </td> {% endif %}
+                    {% if gara.dettaglio.coordinazione == True %} <td>SI</td> {% else %} <td> </td> {% endif %}
+               </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+    {% endif %}
+{% endblock blocco_dettaglio %}

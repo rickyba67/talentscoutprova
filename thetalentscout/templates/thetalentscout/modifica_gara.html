@@ -1,0 +1,132 @@
+{% extends "thetalentscout/base.html" %}
+
+{% block blocco_sezione %}
+    Modifica Gara
+{% endblock blocco_sezione %}
+{% block blocco_main %}
+    <form method="POST" class="post-form">{% csrf_token %}
+    <div class="datigara">
+        <div class="datagara">
+            <label class="cat_gara">Data:</label><input class="input_digara" id="inputdata" type="text" {{ form.dataincontro }}
+        </div>
+        <div class="cat">
+            <label class="cat_gara" for="id_categoria">Categoria:</label>
+            <select name="categoria" class="selettori" required id={{ form.categoria }}</select><label class="hidden">{{ form.tipo }}</label><br>
+        </div>
+    </div>
+    <table>
+        <thead>
+            <tr class="squadre">
+                <th class="squadrain">
+                    <div class="SqIn">Squadra In</div>
+                    <input class="input_digara" type="text" {{ form.squadrain }}
+                    <div class="bloccomodulo">
+                        <label class="labelclass">modulo:</label><input class="input_digara" type="text" {{ form.moduloin }}
+                    </div>
+                </th>
+                <th class="squadrain">
+                    <div class="SqIn">Squadra Out</div>
+                    <input class="input_digara" type="text" {{ form.squadraout }}
+                    <div class="bloccomodulo">
+                        <label class="labelclass">modulo:</label><input class="input_digara" type="text" {{ form.moduloout }}
+                    </div>
+                </th>
+            </tr>
+        </thead>
+        <table class="ris">
+            <th class="labelrisultato"><label class="labelclass">Risultato:</label><input class="input_digara" id="inputrisultato" type="text" {{ form.risultato }}</th>
+        </table>
+        <table>
+            <thead>
+                <th class="cognomenome">Cognome Nome</th><th class="cognomenome">Cognome Nome</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="formazione"><label class="numero_gara"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomein1 form.initial.nomein1 form.instance.id %}">[ 1]</a></label><input class="nome_digara" type="text" {{ form.cognomein1 }} <input class="nome_digara" type="text" {{ form.nomein1 }}</td>
+                    <td class="formazione"><label class="numero_gara"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomeout1 form.initial.nomeout1 form.instance.id %}">[ 1]</a></label><input class="nome_digara" type="text" {{ form.cognomeout1 }} <input class="nome_digara" type="text" {{ form.nomeout1 }}</td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomein2 form.initial.nomein2 form.instance.id %}">[ 2]</a></label><input class="nome_digara" type="text" {{ form.cognomein2 }} <input class="nome_digara" type="text" {{ form.nomein2 }}</td>
+                    <td class="formazione"><label class="numero_gara"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomeout2 form.initial.nomeout2 form.instance.id %}">[ 2]</a></label><input class="nome_digara" type="text" {{ form.cognomeout2 }} <input class="nome_digara" type="text" {{ form.nomeout2 }}</td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomein3 form.initial.nomein3 form.instance.id %}">[ 3]</a></label><input class="nome_digara" type="text" {{ form.cognomein3 }} <input class="nome_digara" type="text" {{ form.nomein3 }}</td>
+                    <td class="formazione"><label class="numero_gara"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomeout3 form.initial.nomeout3 form.instance.id %}">[ 3]</a></label><input class="nome_digara" type="text" {{ form.cognomeout3 }} <input class="nome_digara" type="text" {{ form.nomeout3 }}</td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomein4 form.initial.nomein4 form.instance.id %}">[ 4]</a></label><input class="nome_digara" type="text" {{ form.cognomein4 }} <input class="nome_digara" type="text" {{ form.nomein4 }}</td>
+                    <td class="formazione"><label class="numero_gara"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomeout4 form.initial.nomeout4 form.instance.id %}">[ 4]</a></label><input class="nome_digara" type="text" {{ form.cognomeout4 }} <input class="nome_digara" type="text" {{ form.nomeout4 }}</td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomein5 form.initial.nomein5 form.instance.id %}">[ 5]</a></label><input class="nome_digara" type="text" {{ form.cognomein5 }} <input class="nome_digara" type="text" {{ form.nomein5 }}</td>
+                    <td class="formazione"><label class="numero_gara"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomeout5 form.initial.nomeout5 form.instance.id %}">[ 5]</a></label><input class="nome_digara" type="text" {{ form.cognomeout5 }} <input class="nome_digara" type="text" {{ form.nomeout5 }}</td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomein6 form.initial.nomein6 form.instance.id %}">[ 6]</a></label><input class="nome_digara" type="text" {{ form.cognomein6 }} <input class="nome_digara" type="text" {{ form.nomein6 }}</td>
+                    <td class="formazione"><label class="numero_gara"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomeout6 form.initial.nomeout6 form.instance.id %}">[ 6]</a></label><input class="nome_digara" type="text" {{ form.cognomeout6 }} <input class="nome_digara" type="text" {{ form.nomeout6 }}</td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomein7 form.initial.nomein7 form.instance.id %}">[ 7]</a></label><input class="nome_digara" type="text" {{ form.cognomein7 }} <input class="nome_digara" type="text" {{ form.nomein7 }}</td>
+                    <td class="formazione"><label class="numero_gara"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomeout7 form.initial.nomeout7 form.instance.id %}">[ 7]</a></label><input class="nome_digara" type="text" {{ form.cognomeout7 }} <input class="nome_digara" type="text" {{ form.nomeout7 }}</td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomein8 form.initial.nomein8 form.instance.id %}">[ 8]</a></label><input class="nome_digara" type="text" {{ form.cognomein8 }} <input class="nome_digara" type="text" {{ form.nomein8 }}</td>
+                    <td class="formazione"><label class="numero_gara"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomeout8 form.initial.nomeout8 form.instance.id %}">[ 8]</a></label><input class="nome_digara" type="text" {{ form.cognomeout8 }} <input class="nome_digara" type="text" {{ form.nomeout8 }}</td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomein9 form.initial.nomein9 form.instance.id %}">[ 9]</a></label><input class="nome_digara" type="text" {{ form.cognomein9 }} <input class="nome_digara" type="text" {{ form.nomein9 }}</td>
+                    <td class="formazione"><label class="numero_gara"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomeout9 form.initial.nomeout9 form.instance.id %}">[ 9]</a></label><input class="nome_digara" type="text" {{ form.cognomeout9 }} <input class="nome_digara" type="text" {{ form.nomeout9 }}</td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomein10 form.initial.nomein10 form.instance.id %}">[10]</a></label><input class="nome_digara" type="text" {{ form.cognomein10 }} <input class="nome_digara" type="text" {{ form.nomein10 }}</td>
+                    <td class="formazione"><label class="numero_gara"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomeout10 form.initial.nomeout10 form.instance.id %}">[10]</a></label><input class="nome_digara" type="text" {{ form.cognomeout10 }} <input class="nome_digara" type="text" {{ form.nomeout10 }}</td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomein11 form.initial.nomein11 form.instance.id %}">[11]</a></label><input class="nome_digara" type="text" {{ form.cognomein11 }} <input class="nome_digara" type="text" {{ form.nomein11 }}</td>
+                    <td class="formazione"><label class="numero_gara"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomeout11 form.initial.nomeout11 form.instance.id %}">[11]</a></label><input class="nome_digara" type="text" {{ form.cognomeout11 }} <input class="nome_digara" type="text" {{ form.nomeout11 }}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td class="formazione"><label class="numero_gara" id="panchina"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomein12 form.initial.nomein12 form.instance.id %}">[12]</a></label><input class="nome_digara" type="text"  {{ form.cognomein12 }} <input class="nome_digara" type="text"  {{ form.nomein12 }}</td>
+                    <td class="formazione"><label class="numero_gara" id="panchina"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomeout12 form.initial.nomeout12 form.instance.id %}">[12]</a><input class="nome_digara" type="text"  {{ form.cognomeout12 }} <input class="nome_digara" type="text"  {{ form.nomeout12 }}</label></td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara" id="panchina"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomein13 form.initial.nomein13 form.instance.id %}">[13]</a></label><input class="nome_digara" type="text"  {{ form.cognomein13 }} <input class="nome_digara" type="text"  {{ form.nomein13 }}</td>
+                    <td class="formazione"><label class="numero_gara" id="panchina"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomeout13 form.initial.nomeout13 form.instance.id %}">[13]</a></label><input class="nome_digara" type="text"  {{ form.cognomeout13 }} <input class="nome_digara" type="text"  {{ form.nomeout13 }}</td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara" id="panchina"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomein14 form.initial.nomein14 form.instance.id %}">[14]</a></label><input class="nome_digara" type="text"  {{ form.cognomein14 }} <input class="nome_digara" type="text"  {{ form.nomein14 }}</td>
+                    <td class="formazione"><label class="numero_gara" id="panchina"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomeout14 form.initial.nomeout14 form.instance.id %}">[14]</a></label><input class="nome_digara" type="text"  {{ form.cognomeout14 }} <input class="nome_digara" type="text"  {{ form.nomeout14 }}</td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara" id="panchina"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomein15 form.initial.nomein15 form.instance.id %}">[15]</a></label><input class="nome_digara" type="text" {{ form.cognomein15 }} <input class="nome_digara" type="text" {{ form.nomein15 }}</td>
+                    <td class="formazione"><label class="numero_gara" id="panchina"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomeout15 form.initial.nomeout15 form.instance.id %}">[15]</a></label><input class="nome_digara" type="text" {{ form.cognomeout15 }} <input class="nome_digara" type="text" {{ form.nomeout15 }}</td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara" id="panchina"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomein16 form.initial.nomein16 form.instance.id %}">[16]</a></label><input class="nome_digara" type="text" {{ form.cognomein16 }} <input class="nome_digara" type="text" {{ form.nomein16 }}</td>
+                    <td class="formazione"><label class="numero_gara" id="panchina"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomeout16 form.initial.nomeout16 form.instance.id %}">[16]</a></label><input class="nome_digara" type="text" {{ form.cognomeout16 }} <input class="nome_digara" type="text" {{ form.nomeout16 }}</td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara" id="panchina"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomein17 form.initial.nomein17 form.instance.id %}">[17]</a></label><input class="nome_digara" type="text" {{ form.cognomein17 }} <input class="nome_digara" type="text" {{ form.nomein17 }}</td>
+                    <td class="formazione"><label class="numero_gara" id="panchina"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomeout17 form.initial.nomeout17 form.instance.id %}">[17]</a></label><input class="nome_digara" type="text" {{ form.cognomeout17 }} <input class="nome_digara" type="text" {{ form.nomeout17 }}</td>
+                </tr>
+                <tr>
+                    <td class="formazione"><label class="numero_gara" id="panchina"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomein18 form.initial.nomein18 form.instance.id %}">[18]</a></label><input class="nome_digara" type="text" {{ form.cognomein18 }} <input class="nome_digara" type="text" {{ form.nomein18 }}</td>
+                    <td class="formazione"><label class="numero_gara" id="panchina"><a href="{% url 'thetalentscout:new_giocatoredaformazione' form.initial.cognomeout18 form.initial.nomeout18 form.instance.id %}">[18]</a></label><input class="nome_digara" type="text" {{ form.cognomeout18 }} <input class="nome_digara" type="text" {{ form.nomeout18 }}</td>
+                </tr>
+
+                {% block blocco_amichevole %}
+
+                {% endblock blocco_amichevole %}
+                {% block blocco_raduno %}
+
+                {% endblock blocco_raduno %}
+            </tfoot>
+        </table>
+    </table>
+    <div class="nomecognome">
+        <input id="search_submit" class="button1" type="submit" value="Salvataggio"/>
+    </div>
+    </form>
+{% endblock blocco_main %}

@@ -1,0 +1,185 @@
+{% extends "thetalentscout/base.html" %}
+
+{% block blocco_sezione %}
+    Modifca Dettaglio Gara
+{% endblock blocco_sezione %}
+
+{% block blocco_main %}
+    <script LANGUAGE="JavaScript"><!--
+        function codename() {
+            if(document.formname.checkboxname.checked)
+            {
+                document.formname.disabilita_input.disabled=false;
+                document.getElementById("disablita_select").disabled=false;
+                document.getElementById("disablita_select1").disabled=false;
+                document.getElementById("disablita_select2").disabled=false;
+                document.getElementById("disablita_select3").disabled=false;
+                document.getElementById("disablita_select4").disabled=false;
+                document.getElementById("disablita_select5").disabled=false;
+                document.getElementById("disablita_select6").disabled=false;
+                document.getElementById("disablita_select7").disabled=false;
+                document.getElementById("disablita_select8").disabled=false;
+                document.getElementById("disablita_select9").disabled=false;
+                document.getElementById("search_submit").disabled=false;
+                document.getElementById("disablita_select10").disabled=false;
+                document.getElementById("disablita_select11").disabled=false;
+                document.getElementById("disablita_select12").disabled=false;
+                document.getElementById("disablita_select13").disabled=false;
+                document.getElementById("disablita_select14").disabled=false;
+                document.getElementById("disablita_select15").disabled=false;
+                document.getElementById("disablita_select16").disabled=false;
+                document.getElementById("disablita_select17").disabled=false;
+                document.getElementById("disablita_select18").disabled=false;
+                document.getElementById("disablita_select19").disabled=false;
+                document.getElementById("disablita_select20").disabled=false;
+                document.getElementById("disablita_select21").disabled=false;
+            }
+            else
+            {
+                document.formname.disabilita_input.disabled=true;
+                document.getElementById("disablita_select").disabled=true;
+                document.getElementById("disablita_select1").disabled=true;
+                document.getElementById("disablita_select2").disabled=true;
+                document.getElementById("disablita_select3").disabled=true;
+                document.getElementById("disablita_select4").disabled=true;
+                document.getElementById("disablita_select5").disabled=true;
+                document.getElementById("disablita_select6").disabled=true;
+                document.getElementById("disablita_select7").disabled=true;
+                document.getElementById("disablita_select8").disabled=true;
+                document.getElementById("disablita_select9").disabled=true;
+                document.getElementById("search_submit").disabled=true;
+                document.getElementById("disablita_select10").disabled=true;
+                document.getElementById("disablita_select11").disabled=true;
+                document.getElementById("disablita_select12").disabled=true;
+                document.getElementById("disablita_select13").disabled=true;
+                document.getElementById("disablita_select14").disabled=true;
+                document.getElementById("disablita_select15").disabled=true;
+                document.getElementById("disablita_select16").disabled=true;
+                document.getElementById("disablita_select17").disabled=true;
+                document.getElementById("disablita_select18").disabled=true;
+                document.getElementById("disablita_select19").disabled=true;
+                document.getElementById("disablita_select20").disabled=true;
+                document.getElementById("disablita_select21").disabled=true;
+            }
+        }
+    //-->
+    </script>
+
+     <form name="formname"  method="post" enctype="multipart/form-data" class="post-form">{% csrf_token %}
+     <div class="anagrafica">
+        {% for anagraf in anagrafica %}
+            <div class="info nome">
+                <span>{{ anagraf.cognome.upper }} {{ anagraf.nome.upper }}</span>
+            </div>
+        {% endfor %}
+
+        {#dati partita#}
+         <div class="info nonome">
+            {% for partitas in gara %}
+                <tspan><strong>Categoria: </strong><em>{{ partitas.categoria.desccategoria }}</em></tspan><br>
+                <tspan><strong>Incontro: </strong>
+                    <a href="{% url 'thetalentscout:mod_gara'  partitas.id%}"
+                    <em class="partita">{{ partitas.squadrain }} - {{ partitas.squadraout }} = {{ partitas.risultato }}</em></a>
+                </tspan><br>
+                <tspan><strong>Data incontro: </strong>
+                    <em>{{ partitas.dataincontro }}</em>
+                </tspan><br><br>
+
+                <div class="blocco_foto">
+                    <strong><a class="foto_giocatoregara" href="{% url 'thetalentscout:foto_giocatore_gara' idc partitas.id %}">Visualizza Foto -></a></strong>
+                </div>
+            {% endfor %}
+         </div>
+    </div>
+    <div class="aspettogenerale">
+        <div class="aspetto">
+             <div class="info datipartita_sx">
+                 <label4>Aspetto Fisico</label4>
+                 <div class="aspettofisico">
+                        <label2 for="id_struttura">Struttura:</label2>
+                     <select id="disablita_select" disabled class="selettori" name="struttura" required id={{ form.struttura }} </select><br>
+                        <label2 for="id_fisicita">Fisicita:</label2>
+                    <select id="disablita_select1" disabled class="selettori" name="fisicita" required id={{ form.fisicita }} </select><br>
+                 </div>
+             </div>
+{#            aspetto tattico tecnico individuale#}
+             <div class="info datipartita_sx">
+                 <label4>Aspetto Tattico Tecnico</label4>
+                 <div  id="disablita" class="aspettotattico">
+                        <label2 for="id_calciare">Calciare:</label2>
+                    <select id="disablita_select2" disabled class="selettori" name="calciare" required id={{ form.calciare }} </select><br>
+                        <label2 for="id_conduzione">Conduzione:</label2>
+                    <select id="disablita_select3" disabled class="selettori" name="conduzione" required id={{ form.conduzione }} </select><br>
+                        <label2 for="id_controllo">Controllo:</label2>
+                    <select id="disablita_select4" disabled class="selettori" name="controllo" required id={{ form.controllo }} </select><br>
+                        <label2 for="id_recuperapalla">Recupera palla:</label2>
+                    <select id="disablita_select5" disabled class="selettori" name="recuperapalla" required id={{ form.recuperapalla }} </select><br>
+                        <label2 for="id_smarcamento">Sarcamento:</label2>
+                    <select id="disablita_select6" disabled class="selettori" name="smarcamento" required id={{ form.smarcamento }} </select><br>
+                        <label2 for="id_marcatura">Marcatura:</label2>
+                    <select id="disablita_select7" disabled class="selettori" name="marcatura" required id={{ form.marcatura }} </select><br>
+                        <label2 for="id_giocoditesta">Gioco di testa:</label2>
+                    <select id="disablita_select8" disabled class="selettori" name="giocoditesta" required id={{ form.giocoditesta }} </select><br>
+                 </div>
+             </div>
+{#            dati aggiuntivi#}
+            <div class="info datipartita_sx">
+                <div class="datiaggiuntivi">
+                    <label2>Assomiglia a:</label2><input name="disabilita_input" disabled class="selettori assomogliaA" type="text" {{ form.assomiglia }} <br>
+                </div>
+            </div>
+            <div class="info datipartita_sx">
+                <div class="datiaggiuntivi">
+                    <label2 id="id_giudizio">Giudizio:</label2><select id="disablita_select9" disabled class="selettori" name="giudizio" required id={{ form.giudizio }} </select><br>
+                </div>
+            </div>
+            <div class="abilita">
+{#                <div class="datiaggiuntivi">#}
+{#                    <label3 class="label_abilita">Abilita campi per modifica</label3><input class="check_abilita" type="checkbox" onclick="codename()" name="checkboxname" value="ON">#}
+{#                </div>#}
+            </div>
+
+        </div>
+        <div class="altroaspetto">
+{#            aspetto atletico#}
+            <div class="info datipartita_dx">
+                 <label4>Aspetto Atletico</label4>
+                 <div class="aspettoatletico">
+                        <label3>Forza:</label3><input id="disablita_select10" disabled class="idcheck" type="checkbox" {{ form.forza }} <br>
+                        <label3>Resistenza:</label3><input id="disablita_select11" disabled class="idcheck" type="checkbox" {{ form.resistenza }} <br>
+                        <label3>Velocità:</label3><input id="disablita_select12" disabled class="idcheck" type="checkbox" {{ form.velocita }} <br>
+                        <label3>Rapidità:</label3><input id="disablita_select13" disabled class="idcheck" type="checkbox" {{ form.rapidita }} <br>
+                        <label3>Agilita:</label3><input id="disablita_select14" disabled class="idcheck" type="checkbox" {{ form.agilita }} <br>
+                        <label3>Coordinazione:</label3><input id="disablita_select15" disabled class="idcheck" type="checkbox" {{ form.coordinazione }}
+                 </div>
+            </div>
+{#            aspetto mentale#}
+            <div class="info datipartita_dx">
+                <label4>Aspetto Mentale</label4>
+                <div class="aspettmentale">
+                       <label3>Personalità:</label3><input id="disablita_select16" disabled class="idcheck" type="checkbox" {{ form.personalita }} <br>
+                       <label3>Concentrazione:</label3><input id="disablita_select17" disabled class="idcheck" type="checkbox" {{ form.concentrazione }} <br>
+                       <label3>Temperamento:</label3><input id="disablita_select18" disabled class="idcheck" type="checkbox" {{ form.temperamento }} <br>
+                       <label3>Aggressività:</label3><input id="disablita_select19" disabled class="idcheck" type="checkbox" {{ form.aggressivita }} <br>
+                       <label3>Autocontrollo:</label3><input id="disablita_select20" disabled class="idcheck" type="checkbox" {{ form.autocontrollo }} <br>
+                       <label3>Disponibilita:</label3><input id="disablita_select21" disabled class="idcheck" type="checkbox" {{ form.disponibilita }}
+                </div>
+            </div>
+             <div class="info datipartita_dx">
+                <label4>Visionato da</label4>
+                <div class="aspettmentale">
+                       {{ visionato }}
+                </div>
+            </div>
+        </div>
+    </div>
+     <label3 class="label_abilita">Abilita campi per modifica</label3><input class="check_abilita" type="checkbox" onclick="codename()" name="checkboxname" value="ON">
+     <div class="nomecognome">
+        <input disabled id="search_submit" class="button destra" type="submit" value="Salvataggio"/>
+    </div>
+
+    </select></select></select></select></select></select></select></select></select></select>
+
+    </form>
+{% endblock blocco_main %}
+

@@ -1,0 +1,39 @@
+{% extends "thetalentscout/base_generic.html" %}
+
+{% block content1 %}
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+
+        <div>
+          <ul id="tag">{{ form.username.label_tag }}</ul>
+          <ul>{{ form.username }}</ul>
+        </div>
+        <div>
+          <ul id="tag">{{ form.password.label_tag }}</ul>
+          <ul>{{ form.password }}</ul>
+        </div>
+
+        <div>
+            <ul>
+                <input type="submit" value="Conferma" />
+                <input type="hidden" name="next" value="{{ next }}" />
+            </ul>
+        </div>
+    </form>
+{% endblock content1 %}
+
+{% block content2 %}
+    {% if form.errors %}
+        <p class="stringa_errore">Attenzione!!! Utente o password errati. Riprovare</p>
+    {% endif %}
+
+    {% if next %}
+        {% if user.is_authenticated %}
+            <p>Non hai i privilegi per accedere a questa pagina.</p>
+        {% else %}
+            <p>Devi aver effettuato l'accesso per visualizzare questa pagina.</p>
+        {% endif %}
+    {% endif %}
+{% endblock content2 %}
+
+

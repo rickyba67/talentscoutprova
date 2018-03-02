@@ -1,0 +1,153 @@
+* {
+     font-family: "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+     font-size: 14px;
+}
+
+.dati{
+    color: white;
+    /*width: 50%;*/
+    position: relative;
+}
+
+#anagrafe{
+    font-size: 20px;
+    text-align: center;
+    padding: 5px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+input[type="text"]{
+    text-transform: uppercase;
+}
+
+#cognome, #nome{
+    width: 300px;
+}
+
+.nomecognome {
+    text-align: center;
+    /*margin-right: 10px;*/
+    padding-top: 5px;
+}
+
+label[for="cognome"]{
+    margin-left: -100px;
+}
+
+label[for="nome"]{
+    margin-left: 30px;
+}
+
+#a{
+    width: 350px;
+}
+
+p1   { display: table-row;}
+
+label1 {
+    color: white;
+    float:left;
+    width:150px;
+    text-align:right;
+    padding-top:5px;
+    margin-right:5px;
+    margin-top: 5px;
+}
+
+input, #g {
+    margin-top: 5px;
+
+}
+/*#a, #b, #c, #d, #e, #f, #g, #h, #i, #l, #m {  float: right}*/
+
+#g{
+    margin-left: 15px;
+    border: 1px solid #ccc;
+    padding: 0.3em;
+    border-radius: 4px;
+    opacity: 1;
+}
+
+.box{
+    width: 600px;
+    /*height: 100px; !* se non indichiamo l'altezza esso sara uguale al 100% del contenuto *!*/
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    /*text-align:right;*/
+    background-color: transparent;
+}
+
+#search_submit{text-align: center}
+
+/*SCREEN*/
+/*CELLULARE*/
+@media screen and (max-width:480px) {
+
+    label1 {
+        width:50px;
+        font-size: 10px;
+        padding-top:2px;
+        margin-top: 2px;
+        margin-right:1px;
+    }
+
+    .box {
+        width: 600px;
+    }
+
+    input, #g{
+        font-size: 10px;
+    }
+
+    #a{
+        width: 150px;
+    }
+
+    .dati{
+        /*color: white;*/
+        /*width: 50%;*/
+        position: relative;
+    }
+
+    #anagrafe{
+        font-size: 10px;
+        text-align: left;
+        padding: 2px;
+        font-weight: bold;
+        text-decoration:none;
+    }
+
+    #cognome, #nome{
+        width: 150px;
+    }
+
+    .nomecognome {
+        text-align: center;
+        /*margin-right: 10px;*/
+        padding-top: 1px;
+    }
+
+    label[for="cognome"]{
+        margin-left: 0px;
+    }
+
+    label[for="nome"]{
+        margin-left: 0px;
+    }
+
+    strong{
+        font-size: 10px;
+        display: block;
+    }
+
+}
+

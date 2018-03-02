@@ -1,0 +1,43 @@
+{% extends "thetalentscout/base.html" %}
+
+{% block blocco_sezione %}
+    Lista Gare
+{% endblock blocco_sezione %}
+
+{% block blocco_main %}
+    <form type="get" action="" style="margin: 0">
+        <fieldset id="legenda">
+            <legend id="pulsanti">Filtri e ordinamento:</legend>
+{#            <div id="blocco">#}
+{#                Anno#}
+{#                <div class="cat">#}
+{#                    <label class="cat_gara" for="id_categoria">Categoria:</label>#}
+{#                    <select name="categoria" class="selettori" required id={{ form.categoria }}</select><label class="hidden">{{ form.tipo }}</label><br>#}
+{#                </div>#}
+{#                <input id="search_submit" class="button" type="submit" value="Ricerca"/></a>#}
+{#            </div>#}
+        </fieldset>
+    </form>
+    <div>
+    {% if lista_gare %}
+        <table>
+            <tr>
+                <th id="primacolonna">Categoria</th>
+                <th id="colonne">Data</th>
+                <th id="colonne">Incontro</th>
+                <th id="colonne">Risultato</th>
+            </tr>
+            {% for gara in lista_gare %}
+                <tr>
+                    <td>{{  gara.categoria }}</td>
+                    <td>{{ gara.dataincontro}}</td>
+                    <td><a href="{% url 'thetalentscout:mod_gara' gara.id%}">{{ gara.squadrain }} - {{ gara.squadraout }}</td>
+                    <td>{{ gara.risultato}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>Nessuna gara nel sistema.</p>
+    {% endif %}
+    </div>
+{% endblock blocco_main %}

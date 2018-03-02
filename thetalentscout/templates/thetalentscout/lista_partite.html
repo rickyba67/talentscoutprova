@@ -1,0 +1,62 @@
+{% extends "thetalentscout/base.html" %}
+
+{% block blocco_sezione %}
+    Lista Gare
+{% endblock blocco_sezione %}
+
+{% block blocco_main %}
+
+    <form type="get" action="" style="margin: 0">
+        <fieldset id="legenda">
+            <legend id="pulsanti">Filtri</legend>
+            <div id="blocco">
+                <select class="selettori" name="id_categoria" id="id_categoria">
+                    <option value="Z">Tutte le categorie</option>
+                    {% for categoria in categ %}
+                        {%  if desccatscelta == categoria.desccategoria %}
+                            <option value="{{ categoria.id}}" selected>{{ categoria.desccategoria }}</option>
+                        {% else %}
+                            <option value="{{ categoria.id}}">{{ categoria.desccategoria }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+                <select class="selettori" name="id_anno" id="id_anno">
+                    <option value="Z">Tutte gli anni</option>
+                    {% for anno in anni_partite %}
+                        {%  if annoselezionato == anno.anno %}
+                            <option selected>{{ anno.anno }}</option>
+                        {% else %}
+                            <option>{{ anno.anno }}</option> %
+                        {% endif %}
+                    {% endfor %}
+                </select>
+
+                <input id="search_submit" class="button" type="submit" value="Ricerca"/></a>
+            </div>
+        </fieldset>
+    </form>
+    <div>
+    {% if lista_gare %}
+        <table>
+            <tr>
+                <th id="primacolonna">Categoria</th>
+                <th id="colonne">Data</th>
+                <th id="colonne">Incontro</th>
+                <th id="colonne">Risultato</th>
+            </tr>
+            {% for gara in lista_gare %}
+                <tr>
+                    <td>{{  gara.categoria }}</td>
+                    <td>{{ gara.dataincontro}}</td>
+                    <td><a href="{% url 'thetalentscout:mod_gara' gara.id%}">{{ gara.squadrain }} - {{ gara.squadraout }}</td>
+                    <td>{{ gara.risultato}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <div class="visionato">
+            <p><strong>Nessuna gara nel sistema.</strong></p>
+        </div>
+    {% endif %}
+    </div>
+{% endblock blocco_main %}

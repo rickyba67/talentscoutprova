@@ -1,0 +1,36 @@
+{% extends "thetalentscout/base.html" %}
+
+{% block blocco_sezione %}
+    Foto-Gara
+{% endblock blocco_sezione %}
+
+{% block blocco_main %}
+        {% if fotogiocatoregara %}
+            {% for fotografia in fotogiocatoregara %}
+                <div class="gallery">
+                    <a target="_blank" href="{{ fotografia.foto.instance.foto.url }}" width="800" height="600">
+                        <img src="{{ fotografia.foto.instance.foto.url }}" width="300" height="200">
+                    </a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="visionato">Nessuna Foto Caricata</div>
+        {% endif %}
+            <!-- Upload form. Note enctype attribute! -->
+{#                <form action="{% url "thetalentscout:foto_giocatore_gara" 1 2 %}" method="post" enctype="multipart/form-data">#}
+        <form method="POST" enctype="multipart/form-data" class="post-form">      {% csrf_token %}
+{#            <p>{{ form.non_field_errors }}</p>#}
+{#            <p>{{ form.foto.label_tag }} </p>#}
+{#            <p>#}
+{#                 {{ form.foto.errors }}#}
+            <input id="e" type="file" name="foto" {{ form.foto }}
+{#                 {{ form.foto }}#}
+{#            </p>#}
+            <p><input type="submit" value="Salvataggio" /></p>
+        </form>
+
+
+{#<br>#}
+{#<button type="submit" class="save btn btn-default">Salvataggio</button>#}
+
+{% endblock blocco_main %}
